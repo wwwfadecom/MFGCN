@@ -173,7 +173,7 @@ class MFGCN(nn.Module):
         # emb = torch.stack([emb1, emb2, Xcom], dim=1)
         # emb, att = self.attention(emb)
         att=0
-        emb = ((emb1+emb2))
+        emb = ((emb1+emb2)*0.5+Xcom)
         # output = self.MLP(emb)
         output1 = self.m1(emb)
         output = self.m2(output1)
